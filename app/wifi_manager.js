@@ -131,12 +131,11 @@ module.exports = function() {
 
     // Access Point related functions
     _is_ap_enabled_sync = function(info) {
-        // If the hw_addr matches the ap_addr
-        // and the ap_ssid matches "rpi-config-ap"
+        // If the inet_addr matches config.access_point.ip_addr
         // then we are in AP mode
         var is_ap  =
-            info["hw_addr"].toLowerCase() == info["ap_addr"].toLowerCase() &&
-            info["ap_ssid"] == config.access_point.ssid;
+            info["inet_addr"] == config.access_point.ip_addr;
+	console.log("info[inet_addr]: " + info["inet_addr"] + "; access_point.ip_addr: " + config.access_point.ip_addr);
         return (is_ap) ? info["hw_addr"].toLowerCase() : null;
     },
 
