@@ -41,7 +41,7 @@ If you do not have `bower` installed already, you can install it globally by run
 ## Install
 
 ```sh
-$git clone git@github.com:sabhiram/raspberry-wifi-conf.git
+$git clone https://github.com/WilliamLiska/raspberry-wifi-conf.git
 $cd raspberry-wifi-conf
 $npm update
 $bower install
@@ -49,7 +49,7 @@ $sudo npm run-script provision
 $sudo npm start
 ```
 
-## Setup the app as a service
+## (optional) Start the app as a service
 
 There is a startup script included to make the server starting and stopping easier. Do remember that the application is assumed to be installed under `/home/pi/raspberry-wifi-conf`. Feel free to change this in the `assets/init.d/raspberry-wifi-conf` file.
 
