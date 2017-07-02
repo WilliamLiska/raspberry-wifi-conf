@@ -16,6 +16,26 @@ The NodeJS modules required are pretty much just `underscore`, `async`, and `exp
 
 The web application requires `angular` and `font-awesome` to render correctly. To make the deployment of this easy, one of the other requirements is `bower`.
 
+## Install Node JS on Pi Zero W
+
+If you do not have `node js` installed already, there are special instructions for doing so on the Pi Zero W.  These instructions are from https://blog.miniarray.com/installing-node-js-on-a-raspberry-pi-zero-21a1522db2bb.
+
+We need an earlier version of node (v4.2.4) built specifically for armv6l:
+
+```
+cd ~
+wget http://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv6l.tar.gz
+
+cd /usr/local
+sudo tar xzvf ~/node-v4.2.4-linux-armv6l.tar.gz --strip=1
+
+sudo apt-get remove --purge npm node nodejs
+
+```
+Verify the install with `node -v`
+
+Then upgrade npm with `sudo npm install -g npm`
+
 If you do not have `bower` installed already, you can install it globally by running: `sudo npm install bower -g`.
 
 ## Install
@@ -38,6 +58,10 @@ $sudo cp assets/init.d/raspberry-wifi-conf /etc/init.d/raspberry-wifi-conf
 $sudo chmod +x /etc/init.d/raspberry-wifi-conf  
 $sudo update-rc.d raspberry-wifi-conf defaults
 ```
+
+## Force a wifi reconfigure
+
+The script can be executed with the `ForceChange` parameter to force the Pi to switch to AP mode, allowing you to select a new network.  Works well in coordination with https://github.com/WilliamLiska/supertalkie-buttons.
 
 #### Gotchas
 
