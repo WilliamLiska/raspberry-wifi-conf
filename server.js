@@ -36,7 +36,14 @@ async.series([
         wifi_manager.is_wifi_enabled(function(error, result_ip) {
             if (result_ip) {
                 console.log("\nWifi is enabled, and IP " + result_ip + " assigned");
-                process.exit(0);
+                var args = process.argv.slice(2);
+                if(args[0] === "ForceChange")
+                {
+                  console.log("\nForceChange is in effect. Enabling AP for self-configure")
+                }
+                else {
+                  process.exit(0);
+                }
             } else {
                 console.log("\nWifi is not enabled, Enabling AP for self-configure");
             }
