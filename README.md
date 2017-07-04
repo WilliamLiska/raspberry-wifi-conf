@@ -40,6 +40,8 @@ If you do not have `bower` installed already, you can install it globally by run
 
 ## Install
 
+Bower might take a very long time to complete install on Pi Zero.
+
 ```sh
 $git clone https://github.com/WilliamLiska/raspberry-wifi-conf.git
 $cd raspberry-wifi-conf
