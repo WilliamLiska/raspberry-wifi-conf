@@ -44,9 +44,12 @@ Bower might take a very long time to complete install on Pi Zero.
 
 ```sh
 $git clone https://github.com/WilliamLiska/raspberry-wifi-conf.git
+$sudo chown -R mumble ./raspberry-wifi-conf
 $cd raspberry-wifi-conf
 $npm update
+$su mumble
 $bower install
+$exit
 $sudo npm run-script provision
 $sudo npm start
 ```
